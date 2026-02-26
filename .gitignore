@@ -1,6 +1,4 @@
 .venv/
 *.sqlite3
-media/
 *.pdf
-*.pptx
 *.apk
