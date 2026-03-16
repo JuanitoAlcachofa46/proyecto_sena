@@ -3,13 +3,13 @@
 {% extends "plantilla.html" %}
 
 {%load static%}
-<!-- this block is used to  load the display,-->
 
-{%block css%}
+<!-- this block is used to  load the display-->
+
+{% block css %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'catalog/css/productlist.css'%}">
-
-{%endblock%}
+{% endblock %}
 
 
 <!-- the block content is always to  write the html-->
@@ -19,7 +19,6 @@
 {% block content %}
 <div class="container-2">
     <form method = "POST" enctype="multipart/form-data">
-        
     {% csrf_token %}
     {%for field in form%}
         <div>
@@ -59,8 +58,7 @@
                         <img src="{{ x.imagen_url }}" alt="{{ x.nombre }}" style="max-width: 200px;">
                     </div>
                 
-                {% endif %}
-
-                
+                {% endif %}   
         </div>
     {% endfor %}
+{% endblock %}

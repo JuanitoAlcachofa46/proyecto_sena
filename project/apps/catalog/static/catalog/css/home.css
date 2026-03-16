@@ -7,17 +7,19 @@ html{
 }
 /* carousel*/
 
-body {background-color: black;}
+
+html, body{
+    background-color:var(--white-95)
+}
 
 
 
 
 
-
-    .products-list{
+.products-list{
     display: grid;  
     grid-auto-columns: 300px;
-    grid-template-rows: 1fr;
+    grid-template-rows: 2fr;
     grid-auto-flow: column;
     z-index: 0;
     
@@ -44,20 +46,16 @@ body {background-color: black;}
 /*class */
 
 .product {
+    
     border: 2px solid var(--white-85);
     background-color: var(--white-90);
     display: flex;
-    position: relative ;
-    flex-grow: 0;
     flex-direction: column;
-    gap: 10px;
-    margin: 5px;
-    z-index: 2;
+    
     overflow: hidden;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
     align-self: start;
-    height: auto;
     transition: all 0.3s ease-in-out;
 }
 
@@ -70,7 +68,7 @@ body {background-color: black;}
 }
 
 .product .text:hover{
-    max-height:100px;
+    max-height:200px;
     transition: all 0.2s ease-in-out;
 }
 .text{
@@ -108,7 +106,7 @@ body {background-color: black;}
 .img-container{
     overflow: hidden;
     box-sizing: content-box ;
-    max-height: 260px;
+    height: 260px;
 }
     /*the next css is made for the landpage, the previous thing was for  mostly only the carouse */
 
@@ -211,7 +209,6 @@ in the web, the photo and the text*/
     justify-content: space-evenly;
     border-top: 2px solid black;
     padding-bottom : 3rem; padding-top: 1rem;
-    background-color: black;
     
 }
 .footer-container{
@@ -255,7 +252,6 @@ in the web, the photo and the text*/
     z-index: 0;
     position: relative;
     margin-top: 0rem;
-    background-color: black;
 }
 .dual-conatiner div{
     height: 80vh;
@@ -283,7 +279,7 @@ in the web, the photo and the text*/
     flex-wrap:nowrap;
     position: relative;
     scroll-behavior: smooth;
-    background-color: black;
+
 
 }
 
