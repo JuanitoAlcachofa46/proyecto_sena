@@ -4,7 +4,7 @@ from apps.catalog.models import producto
 from apps.users.models import customuser
 class orderList(models.Model):
     user = models.ForeignKey(customuser, on_delete=models.CASCADE)
-    productos = models.ManyToManyField(producto , null="False")
+    productos = models.ManyToManyField(producto , blank=False)
     def __str__(self):
         return f"orderlist of {self.user.nombre}"
     

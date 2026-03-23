@@ -27,6 +27,7 @@ class UserSession(models.Model):
 class customuser(AbstractUser):
     email = models.EmailField(unique=True)
     imagen = models.ImageField(upload_to='imagenes/', blank=True, null=True)
+    score = models.IntegerField(default=0)
     def clean(self):
         if not self.email.endswith("@gmail.com"):
             from django.core.exceptions import ValidationError
