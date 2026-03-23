@@ -1,0 +1,50 @@
+{% extends 'plantilla.html'%}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type= "text/css" href="{%static 'css/styles.css'%}">
+<link rel="stylesheet" type="text/css" href="{% static 'catalog/css/group.css'%}">
+<link rell="stylesheet" type="text/css" href="{% static 'catalog/css/group.css'%}">
+{% endblock %}
+
+
+
+
+{% block content %}
+
+    <div class="side-menu">
+        <div class="sections">
+            {% for i in sections %}
+                <div class="section">
+                    <a href="{% url 'catalog:section' section.id %}">{{ section.name }}</a>
+            {%endfor%}
+        </div>
+    </div>
+
+    <div class ="container-2">
+        <div></div>
+        {%for i in posts%}
+            <div class="post">
+                <img src="{{i.user.imagen.url}}">
+                <p>{{i.user.username}}</p>
+                <div class="post-text">
+                    <p>
+                        {{i.content}}
+                    </p>
+                </div>
+            <div>
+        {%endfor%}
+        </div>
+        <form method="post">
+            <div class="make-post">
+                {%for field in form%}
+                    {% csrf_token %}
+                    {{ field.label_tag}}
+                    {{ field }}
+                    {{ field.errors}}
+                {% endfor %}
+            </div>
+            <button type="submit">publicar</button>
+        </form>
+    </div>
+{%endblock%}

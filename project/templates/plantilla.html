@@ -21,17 +21,6 @@
                 
 
                 <div class="nav-links">
-                    <ul>
-                        <li>
-                            <a href="#">Inicio</a>
-                        </li>
-                        <li>
-                            <a href="#">Contacto</a>
-                        </li>
-                        <li>
-                            <a href="#">Acerca de</a>
-                        </li>
-                    </ul>
                 </div>
 
                 <div>
@@ -45,8 +34,9 @@
 <!-- not sure of why this causes an erro on vs code, but still runs so dont worry-->
                             {%if user.is_authenticated%}
                                 {{user.username}}
-                                <li><button onclick="window.location.href='#'">Configuración</button></li>
+                                <li><button onclick="window.location.href='#'>Configuración</button></li>
                                 <li><button onclick="window.location.href='{% url 'users:logout' %}'">logout</button></li>
+                                <li><button onclick="window.location.href='{% url 'catalog:add_group'%}'">groups</BUTTON></li>
                             {%else%}
                                 <li><button onclick="window.location.href='{% url 'users:login' %}'">login</button></li>
                                 <li><button onclick="window.location.href='{% url 'users:singup' %}'">sing up </button></li>
